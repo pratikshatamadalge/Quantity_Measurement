@@ -1,9 +1,5 @@
 ﻿namespace QuantityMeasurement.MetricsUnit
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     public static class Units
     {
         public enum Length
@@ -23,7 +19,8 @@
 
         public enum temperature
         {
-            FARENHITE, CELCIUS
+            FARENHITE,
+            CELCIUS,
         }
     }
 }
