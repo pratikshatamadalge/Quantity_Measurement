@@ -64,7 +64,7 @@
                             throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);
                     }
 
-                case "temperature":
+                case "Temperature":
                     switch (unit)
                     {
                         case Temperature.CELCIUS:

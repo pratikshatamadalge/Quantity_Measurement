@@ -250,5 +250,12 @@ namespace QuantityMeasurementTest
             this.Result = Add(UnitConvertor<Weight>(1, Weight.TONNE), UnitConvertor<Weight>(1000, Weight.GRAM), UnitConvertor<Weight>(1001, Weight.KILO));
             Assert.IsTrue(this.Result);
         }
+
+        [Test]
+        public void TwoHundredAndTwelveFarenhite_EqualTo_Hundred_Celcius()
+        {
+            this.Result = UnitConvertor<Temperature>(212, Temperature.FARENHITE) == UnitConvertor<Temperature>(100, Temperature.CELCIUS);
+            Assert.IsTrue(this.Result);
+        }
     }
 }
