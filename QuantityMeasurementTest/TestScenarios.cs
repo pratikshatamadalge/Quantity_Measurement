@@ -62,5 +62,46 @@ namespace QuantityMeasurementTest
 
             Assert.IsFalse(first_value.Equals(second_value));
         }
+
+        [Test]
+        public void EqualValue_should_Return_True()
+        {
+            Feet first_value = new Feet();
+            first_value.ValueInFeet = 3.6;
+            Assert.IsTrue(first_value.Equals(first_value));
+        }
+
+        [Test]
+        public void ZeroInch_EqualTo_ZeroInch_should_return_true()
+        {
+            Inches first_value = new Inches();
+            Inches second_value = new Inches();
+            Assert.IsTrue(first_value.Inch.Equals(second_value.Inch));
+        }
+
+        [Test]
+        public void ZeroInch_And_NullValue_should_return_False()
+        {
+            Inches inch = new Inches();
+            Assert.IsFalse(inch.Equals(null));
+        }
+
+        [Test]
+        public void ZeroInch_And_ZeroInch_should_return_true()
+        {
+            Inches first_value = new Inches();
+            Inches second_value = new Inches();
+            Assert.IsTrue(first_value.Inch.Equals(second_value.Inch));
+        }
+
+        [Test]
+        public void ZeroInch_And_NullValue_Should_return_False()
+        {
+            Inches inch = new Inches();
+            Assert.IsFalse(inch.Equals(null));
+        }
+
+        [Test]
+        public void 
     }
 }

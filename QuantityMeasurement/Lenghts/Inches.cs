@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuantityMeasurement.Lenghts
 {
-    class Inches
+    public class Inches
     {
         public double Inch;
 
@@ -19,17 +19,17 @@ namespace QuantityMeasurement.Lenghts
 
         public override bool Equals(object obj)
         {
-            if(obj == null)
+            if (obj == null)
             {
                 return false;
             }
 
-            if(!(obj == this))
+            if (!(obj == this))
             {
                 return false;
             }
 
-            if(!(obj.GetType()==this.GetType()))
+            if (!(obj.GetType()==this.GetType()))
             {
                 return false;
             }
