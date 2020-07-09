@@ -58,7 +58,20 @@
                             return value;
 
                         case Weight.TONNE:
-                            return value*1000;
+                            return value * 1000;
+
+                        default:
+                            throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);
+                    }
+
+                case "temperature":
+                    switch (unit)
+                    {
+                        case Temperature.CELCIUS:
+                            return value;
+
+                        case Temperature.FARENHITE:
+                            return (value - 32) * 5 / 9;
 
                         default:
                             throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);

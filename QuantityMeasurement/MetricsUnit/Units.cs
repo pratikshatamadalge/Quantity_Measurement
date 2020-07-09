@@ -17,7 +17,7 @@
             KILO, GRAM, TONNE,
         }
 
-        public enum temperature
+        public enum Temperature
         {
             FARENHITE,
             CELCIUS,
