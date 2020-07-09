@@ -215,5 +215,19 @@ namespace QuantityMeasurementTest
             this.Result = UnitConvertor<Volume>(1, Volume.LITRE) == UnitConvertor<Volume>(1000,Volume.ML);
             Assert.IsTrue(this.Result);
         }
+
+        [Test]
+        public void OneGallon_Add_ThreePointSeventyEightGallon_Return_SevenPointFiftySevenLitres()
+        {
+            this.Result = Add(UnitConvertor<Volume>(1, Volume.GALLON), UnitConvertor<Volume>(3.78, Volume.LITRE), UnitConvertor<Volume>(7.57, Volume.LITRE));
+            Assert.IsTrue(this.Result);
+        }
+
+        [Test]
+        public void OneLitre_Add_OneML_Should_Return_TwoLitre()
+        {
+            this.Result = Add(UnitConvertor<Volume>(1, Volume.LITRE), UnitConvertor<Volume>(1000,Volume.ML), UnitConvertor<Volume>(2,Volume.LITRE));
+            Assert.IsTrue(this.Result);
+        }
     }
 }
