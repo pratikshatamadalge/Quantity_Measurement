@@ -27,9 +27,9 @@ namespace QuantityMeasurementTest
         [Test]
         public void ZeroFeet_EqualTo_ZeroFeet_should_Return_True()
         {
-           Feet first_value = new Feet(0.0);
-           Feet second_value = new Feet(0.0);
-           Assert.IsTrue(first_value.ValueInFeet.Equals(second_value.ValueInFeet));
+            Feet first_value = new Feet(0.0);
+            Feet second_value = new Feet(0.0);
+            Assert.IsTrue(first_value.ValueInFeet.Equals(second_value.ValueInFeet));
         }
 
         [Test]
@@ -47,7 +47,7 @@ namespace QuantityMeasurementTest
         }
 
         [Test]
-        public void  ReferenceCheck_Test_For_FEET()
+        public void ReferenceCheck_Test_For_FEET()
         {
             Feet first_value = new Feet();
             Feet second_value = new Feet();
@@ -57,7 +57,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void ImproperType_object_should_Return_False()
         {
-            Feet first_value=new Feet();
+            Feet first_value = new Feet();
             object second_value = new Feet();
 
             Assert.IsFalse(first_value.Equals(second_value));
@@ -107,6 +107,71 @@ namespace QuantityMeasurementTest
             Inches first_value = new Inches();
             Inches second_value = new Inches();
             Assert.IsFalse(first_value.Equals(second_value));
+        }
+
+        [Test]
+        public void Equal_InchValue_Should_return_true()
+        {
+            Inches value = new Inches();
+            value.Inch = 5.0;
+            Assert.IsTrue(value.Equals(value));
+        }
+
+        [Test]
+        public void Improper_InchType_Value_Should_Return_False()
+        {
+            Inches first_value = new Inches();
+            object second_value = new Inches();
+            Assert.IsFalse(first_value.Equals(second_value));
+        }
+
+        [Test]
+        public void ThreeFeet_compare_one_Yard_should_return_True()
+        {
+            this.Result = UnitConvertor<Length>(3, Length.FEET) == UnitConvertor<Length>(1, Length.YARDS);
+            Assert.IsTrue(this.Result);
+        }
+
+        [Test]
+        public void Provided_OneFeet_And_OneYard_After_Compare_Should_Return_False()
+        {
+            this.Result = UnitConvertor<Length>(1, Length.FEET) == UnitConvertor<Length>(1, Length.YARDS);
+            Assert.IsFalse(this.Result);
+        }
+
+        [Test]
+        public void Provided_OneInche_And_OneYard_When_Compare_Should_Return_False()
+        {
+            this.Result = UnitConvertor<Length>(1, Length.INCHES) == UnitConvertor<Length>(1, Length.YARDS);
+            Assert.IsFalse(this.Result);
+        }
+
+        [Test]
+        public void Provided_OneYard_And_ThirtySixInches_When_Compare_Should_Return_True()
+        {
+            this.Result = UnitConvertor<Length>(1, Length.YARDS) == UnitConvertor<Length>(36, Length.INCHES);
+            Assert.IsTrue(this.Result);
+        }
+
+        [Test]
+        public void Provided_ThirtySixInches_And_OneYard_When_Compare_Should_Return_True()
+        {
+            this.Result = UnitConvertor<Length>(36, Length.INCHES) == UnitConvertor<Length>(1, Length.YARDS);
+            Assert.IsTrue(this.Result);
+        }
+
+        [Test]
+        public void Provided_OneYard_And_ThreeFeet_When_Compare_Should_Return_True()
+        {
+            this.Result = UnitConvertor<Length>(1, Length.YARDS) == UnitConvertor<Length>(3,Length.FEET);
+            Assert.IsTrue(this.Result);
+        }
+
+        [Test]
+        public void Provided_TwoInch_And_FiveCM_When_Compare_Should_Return_True()
+        {
+            this.Result = UnitConvertor<Length>(2, Length.INCHES) == UnitConvertor<Length>(5, Length.CM);
+            Assert.IsTrue(this.Result);
         }
     }
 }
