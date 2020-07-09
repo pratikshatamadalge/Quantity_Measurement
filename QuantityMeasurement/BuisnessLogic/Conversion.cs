@@ -49,16 +49,16 @@
                     }
 
                 case "weight":
-                    switch(unit)
+                    switch (unit)
                     {
                         case Weight.GRAM:
-                            return value;
+                            return value/1000;
 
                         case Weight.KILO:
                             return value;
 
                         case Weight.TONNE:
-                            return value;
+                            return value*1000;
 
                         default:
                             throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);
