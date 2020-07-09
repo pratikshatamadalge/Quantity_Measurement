@@ -48,7 +48,7 @@
                             throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);
                     }
 
-                case "weight":
+                case "Weight":
                     switch (unit)
                     {
                         case Weight.GRAM:
@@ -62,7 +62,6 @@
 
                         default:
                             throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);
-
                     }
 
                 default:
