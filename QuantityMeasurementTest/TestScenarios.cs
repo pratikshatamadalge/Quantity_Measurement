@@ -6,6 +6,8 @@ namespace QuantityMeasurementTest
     using static QuantityMeasurement.BuisnessLogic.Addition;
     using static QuantityMeasurement.BuisnessLogic.Conversion;
     using static QuantityMeasurement.MetricsUnit.Units;
+    using static QuantityMeasurement.CustomException;
+    using QuantityMeasurement;
 
     public class Tests
     {
@@ -203,6 +205,32 @@ namespace QuantityMeasurementTest
         }
 
         [Test]
+        public void Provided_Improper_Type_Measurment_Should_Throw_Exception()
+        {
+            try
+            {
+                bool result = UnitConvertor<length>(12, length.INCHES) == UnitConvertor<length>(1, Volume.GALLON);
+            }
+            catch (CustomException e)
+            {
+                Assert.AreEqual(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT, e.typeOfException);
+            }
+        }
+
+        [Test]
+        public void Improper_Type_Measurment_Should_Throw_Exception()
+        {
+            try
+            {
+                bool result = UnitConvertor<length>(12, length.INCHES) == UnitConvertor<Volume>(1, Volume.GALLON);
+            }
+            catch (CustomException e)
+            {
+                Assert.AreEqual(CustomException.TypeOfException.INVALID_MEASUREMENT_UNIT_MISMATCH, e.typeOfException);
+            }
+        }
+
+            [Test]
         public void OneGallon_EqualTo_ThreePointSeventyEightLitre_Should_Return_True()
         {
             this.Result = UnitConvertor<Volume>(1, Volume.GALLON) == UnitConvertor<Volume>(3.78, Volume.LITRE);

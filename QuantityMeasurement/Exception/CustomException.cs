@@ -2,7 +2,7 @@
 {
     using System;
 
-    class CustomException : Exception
+    public class CustomException : Exception
     {
         public TypeOfException typeOfException;
 
