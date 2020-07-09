@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Text;
 
-    class Feet
+   public class Feet
     {
         public double ValueInFeet;
 

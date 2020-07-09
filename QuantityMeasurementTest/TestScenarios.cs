@@ -5,6 +5,7 @@ namespace QuantityMeasurementTest
     using QuantityMeasurement.MetricsUnit;
     using static QuantityMeasurement.BuisnessLogic.Conversion;
     using static QuantityMeasurement.MetricsUnit.Units;
+    using QuantityMeasurement.Lenghts;
 
     public class Tests
     {
@@ -19,8 +20,16 @@ namespace QuantityMeasurementTest
         [Test]
         public void TwelveInch_EqualTo_OneFeet_Should_Return_True()
         {
-            this.Result = Conversion.UnitConvertor<Length>(12, Units.Length.INCHES) == Conversion.UnitConvertor<Length>(12, Units.Length.INCHES);
+            this.Result = Conversion.UnitConvertor<Length>(12, Length.INCHES) == Conversion.UnitConvertor<Length>(12, Length.INCHES);
             Assert.IsTrue(this.Result);
+        }
+
+        [Test]
+        public void ZeroFeet_EqualTo_ZeroFeet_should_Return_True()
+        {
+           Feet first_value = new Feet(0.0);
+           Feet second_value = new Feet(0.0);
+           Assert.IsTrue(first_value.ValueInFeet.Equals(second_value.ValueInFeet));
         }
     }
 }
