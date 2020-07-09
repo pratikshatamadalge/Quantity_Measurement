@@ -20,22 +20,22 @@
                 case "length":
                     switch (unit)
                     {
-                        case Length.FEET:
+                        case length.FEET:
                             return value * 12;
 
-                        case Length.YARDS:
+                        case length.YARDS:
                             return value * 36;
 
-                        case Length.INCHES:
+                        case length.INCHES:
                             return value;
 
-                        case Length.CM:
+                        case length.CM:
                             return value / 2.5;
                         default:
                             throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);
                     }
 
-                case "volume":
+                case "Volume":
                     switch (unit)
                     {
                         case Volume.LITRE:

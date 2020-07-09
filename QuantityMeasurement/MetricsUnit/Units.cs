@@ -2,7 +2,7 @@
 {
     public static class Units
     {
-        public enum Length
+        public enum length
         {
             FEET, YARDS, CM, INCHES,
         }
