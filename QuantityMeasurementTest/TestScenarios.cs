@@ -243,5 +243,12 @@ namespace QuantityMeasurementTest
             this.Result = UnitConvertor<Weight>(1000, Weight.KILO) == UnitConvertor<Weight>(1, Weight.TONNE);
             Assert.IsTrue(this.Result);
         }
+
+        [Test]
+        public void OneTonne_Add_OneGram_return_OneThousandAndOneKG()
+        {
+            this.Result = Add(UnitConvertor<Weight>(1, Weight.TONNE), UnitConvertor<Weight>(1000, Weight.GRAM), UnitConvertor<Weight>(1001, Weight.KILO));
+            Assert.IsTrue(this.Result);
+        }
     }
 }
