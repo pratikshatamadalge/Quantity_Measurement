@@ -102,6 +102,11 @@ namespace QuantityMeasurementTest
         }
 
         [Test]
-        public void 
+        public void ReferenceCheck_For_Inch()
+        {
+            Inches first_value = new Inches();
+            Inches second_value = new Inches();
+            Assert.IsFalse(first_value.Equals(second_value));
+        }
     }
 }
