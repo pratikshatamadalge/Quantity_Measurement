@@ -5,6 +5,7 @@ namespace QuantityMeasurementTest
     using QuantityMeasurement.Lenghts;
     using QuantityMeasurement.MetricsUnit;
     using static QuantityMeasurement.BuisnessLogic.Conversion;
+    using static QuantityMeasurement.BuisnessLogic.Addition;
     using static QuantityMeasurement.MetricsUnit.Units;
 
     public class Tests
@@ -172,6 +173,34 @@ namespace QuantityMeasurementTest
         {
             this.Result = UnitConvertor<Length>(2, Length.INCHES) == UnitConvertor<Length>(5, Length.CM);
             Assert.IsTrue(this.Result);
+        }
+
+        [Test]
+        public void TwoInch_Add_TwoInch_Should_Return_FourInch()
+        {
+            this.Result = Add(UnitConvertor<Length>(2, Length.INCHES), UnitConvertor<Length>(2, Length.INCHES), UnitConvertor<Length>(4, Length.INCHES));
+            Assert.IsTrue(this.Result);
+        }
+
+        [Test]
+        public void OneFeet_Add_TwoInch_should_return_TwentyFourInch()
+        {
+            this.Result = Add(UnitConvertor<Length>(1, Length.FEET), UnitConvertor<Length>(2, Length.INCHES), UnitConvertor<Length>(24, Length.INCHES));
+            Assert.IsFalse(this.Result);
+        }
+
+        [Test]
+        public void OneFeet_Add_OneFeet_should_return_TwentyFourInch()
+        {
+            this.Result = Add(UnitConvertor<Length>(1, Length.FEET), UnitConvertor<Length>(1, Length.FEET), UnitConvertor<Length>(24, Length.INCHES));
+            Assert.IsTrue(this.Result);
+        }
+
+        [Test]
+        public void TwoInch_Add_TwoPointFiveInch_rturn_Three_Inch()
+        {
+            this.Result = Add(UnitConvertor<Length>(2, Length.INCHES), UnitConvertor<Length>(2.5, Length.INCHES), UnitConvertor<Length>(3, Length.INCHES));
+            Assert.IsFalse(this.Result);
         }
     }
 }
