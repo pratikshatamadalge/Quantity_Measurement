@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QuantityMeasurement.Lenghts
+﻿namespace QuantityMeasurement.Lenghts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class Inches
     {
         public double Inch;
@@ -29,7 +29,7 @@ namespace QuantityMeasurement.Lenghts
                 return false;
             }
 
-            if (!(obj.GetType()==this.GetType()))
+            if (!(obj.GetType() == this.GetType()))
             {
                 return false;
             }

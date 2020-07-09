@@ -48,6 +48,23 @@
                             throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);
                     }
 
+                case "weight":
+                    switch(unit)
+                    {
+                        case Weight.GRAM:
+                            return value;
+
+                        case Weight.KILO:
+                            return value;
+
+                        case Weight.TONNE:
+                            return value;
+
+                        default:
+                            throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);
+
+                    }
+
                 default:
                     throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);
             }
