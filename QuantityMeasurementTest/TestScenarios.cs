@@ -167,11 +167,6 @@ namespace QuantityMeasurementTest
             Assert.IsTrue(this.Result);
         }
 
-        [Test]
-        public void Provided_TwoInch_And_FiveCM_When_Compare_Should_Return_True()
-        {
-            this.Result = UnitConvertor<Length>(2, Length.INCHES) == UnitConvertor<Length>(5, Length.CM);
-            Assert.IsTrue(this.Result);
-        }
+        
     }
 }
