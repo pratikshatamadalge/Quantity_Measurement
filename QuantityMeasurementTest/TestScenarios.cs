@@ -3,9 +3,8 @@ namespace QuantityMeasurementTest
     using NUnit.Framework;
     using QuantityMeasurement.BuisnessLogic;
     using QuantityMeasurement.Lenghts;
-    using QuantityMeasurement.MetricsUnit;
-    using static QuantityMeasurement.BuisnessLogic.Conversion;
     using static QuantityMeasurement.BuisnessLogic.Addition;
+    using static QuantityMeasurement.BuisnessLogic.Conversion;
     using static QuantityMeasurement.MetricsUnit.Units;
 
     public class Tests
