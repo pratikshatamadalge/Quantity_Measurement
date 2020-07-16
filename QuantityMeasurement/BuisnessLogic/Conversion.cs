@@ -1,35 +1,43 @@
-﻿namespace QuantityMeasurement.BuisnessLogic
+﻿// <copyright file="Conversion.cs" company="Bridgelabz">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace QuantityMeasurement.BuisnessLogic
 {
     using System;
     using static QuantityMeasurement.MetricsUnit.Units;
 
+    /// <summary>
+    /// Buisness Logic for Quantity conversion.
+    /// </summary>
     public static class Conversion
     {
         /// <summary>
-        /// <typeparam name="E"></typeparam>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
-        /// <returns></returns>
+        /// Unit convertor method.
         /// </summary>
-        public static double UnitConvertor<E>(double value, Enum unit)
+        /// <typeparam name="T">Generic.</typeparam>
+        /// <param name="value">Entered value.</param>
+        /// <param name="unit">Given Unit.</param>
+        /// <returns>double value.</returns>
+        public static double UnitConvertor<T>(double value, Enum unit)
         {
-            Type type = typeof(E);
+            Type type = typeof(T);
             string name = type.Name;
             switch (name)
             {
-                case "length":
+                case "Length":
                     switch (unit)
                     {
-                        case length.FEET:
+                        case Length.FEET:
                             return value * 12;
 
-                        case length.YARDS:
+                        case Length.YARDS:
                             return value * 36;
 
-                        case length.INCHES:
+                        case Length.INCHES:
                             return value;
 
-                        case length.CM:
+                        case Length.CM:
                             return value / 2.5;
                         default:
                             throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);
@@ -52,7 +60,7 @@
                     switch (unit)
                     {
                         case Weight.GRAM:
-                            return value/1000;
+                            return value / 1000;
 
                         case Weight.KILO:
                             return value;

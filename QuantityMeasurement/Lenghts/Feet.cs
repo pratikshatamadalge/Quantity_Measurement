@@ -1,11 +1,19 @@
-﻿namespace QuantityMeasurement.Lenghts
+﻿// <copyright file="Feet.cs" company="Bridgelabz">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace QuantityMeasurement.Lenghts
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
-   public class Feet
+    /// <summary>
+    /// Length measurement for feet unit.
+    /// </summary>
+    public class Feet
     {
+        /// <summary>
+        /// Value in feet.
+        /// </summary>
         public double ValueInFeet;
 
         /// <summary>
@@ -18,15 +26,16 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="Feet"/> class.
         /// </summary>
-        /// <param name="feet"></param>
+        /// <param name="feet">feet.</param>
         public Feet(double feet)
         {
             this.ValueInFeet = feet;
         }
 
+        /// <returns>true or false.</returns>
+        /// <param name="obj">object.</param>
         /// <summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
+        /// Equals override methode.
         /// <summary>
         public override bool Equals(object obj)
         {
@@ -48,6 +57,10 @@
             return ((Feet)obj).ValueInFeet == this.ValueInFeet;
         }
 
+        /// <summary>
+        /// Override gethashCode method.
+        /// </summary>
+        /// <returns>int value.</returns>
         public override int GetHashCode()
         {
             return HashCode.Combine(this.ValueInFeet);
