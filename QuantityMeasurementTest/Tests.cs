@@ -1,4 +1,4 @@
-﻿// <copyright file="Tests.cs" company="PlaceholderCompany">
+﻿// <copyright file="Tests.cs" company="Bridgelabz">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -37,7 +37,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void TwelveInch_EqualTo_OneFeet_Should_Return_True()
         {
-            this.Result = Conversion.UnitConvertor<Length>(12, Length.INCHES) == Conversion.UnitConvertor<Length>(12, Length.INCHES);
+            this.Result = Conversion.UnitConvertor<Length>(12, Length.INCHES) == Conversion.UnitConvertor<Length>(1, Length.FEET);
             Assert.IsTrue(this.Result);
         }
 

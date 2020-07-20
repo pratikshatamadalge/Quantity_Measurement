@@ -30,13 +30,10 @@ namespace QuantityMeasurement.BuisnessLogic
                     {
                         case Length.FEET:
                             return value * 12;
-
                         case Length.YARDS:
                             return value * 36;
-
                         case Length.INCHES:
                             return value;
-
                         case Length.CM:
                             return value / 2.5;
                         default:
@@ -86,7 +83,7 @@ namespace QuantityMeasurement.BuisnessLogic
                     }
 
                 default:
-                    throw new CustomException(CustomException.TypeOfException.INVALID_UNIT_FOR_GIVEN_MEASUREMENT);
+                    throw new CustomException(CustomException.TypeOfException.INVALID_MEASUREMENT_UNIT_MISMATCH);
             }
         }
     }
